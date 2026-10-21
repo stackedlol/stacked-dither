@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>stacked dither</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&display=swap" rel="stylesheet" />
+    <style>
+      html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+      canvas { display: block; width: 100vw; height: 100vh; }
+      nav {
+        position: fixed; left: 0; bottom: 0; display: flex; align-items: center; gap: 14px;
+        padding: 12px 16px; background: #000; color: #ebe6db;
+        font: 400 11px/1 "Geist Mono", ui-monospace, Menlo, monospace; letter-spacing: 0.12em; text-transform: uppercase;
+      }
+      nav output { min-width: 15ch; }
+      nav div { display: flex; gap: 6px; }
+      nav button {
+        width: 28px; height: 12px; padding: 0; border: 0; border-radius: 0; cursor: pointer;
+        outline: 1px solid rgb(235 230 219 / 0.08); outline-offset: 2px;
+        transition: outline-color 300ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      nav button:hover { outline-color: rgb(235 230 219 / 0.4); }
+      nav button[aria-pressed="true"] { outline-color: #ebe6db; }
+    </style>
+  </head>
+  <body>
+    <canvas aria-hidden="true"></canvas>
+    <nav aria-label="Palette"><output></output><div></div></nav>
+    <script type="module" src="/demo.ts"></script>
+  </body>
+</html>
